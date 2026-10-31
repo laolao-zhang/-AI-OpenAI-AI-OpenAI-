@@ -1,0 +1,14 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>网关状态</title>
+<body><h1>网关状态</h1><p>输入网关令牌查看本地统计。</p>
+<input id="token" type="password" autocomplete="off" placeholder="网关令牌">
+<button id="load">查询</button><pre id="output"></pre>
+<script>
+document.getElementById('load').onclick = async () => {
+  const output = document.getElementById('output');
+  try {
+    const response = await fetch('/admin/stats', {headers: {'Authorization': 'Bearer ' + document.getElementById('token').value}});
+    output.textContent = JSON.stringify(await response.json(), null, 2);
+  } catch (_) { output.textContent = '查询失败'; }
+};
+</script></body></html>
+

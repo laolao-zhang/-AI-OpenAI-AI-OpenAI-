@@ -1,0 +1,15 @@
+.env
+.venv/
+__pycache__/
+*.pyc
+*.log
+data/
+secrets/
+apikeys.txt
+accounts_meta.json
+benefit.json
+usage.json
+quota.json
+last_apikey_data.json
+backup/
+
